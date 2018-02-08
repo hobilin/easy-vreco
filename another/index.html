@@ -1,0 +1,54 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geolocation</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="nav col-xs-6 col-sm-6 col-md-12">
+          
+       
+              <img class="offset-sm-1 offset-md-1" src="assets/img/shape.png" alt="">
+            <input class="input col-xs-12" id="from" type="text" name="" value="" placeholder="Ingrese su punto de partida">
+          
+              <img class="offset-sm-1 offset-md-1" src="assets/img/shape2.png" alt="">
+            <input class="input col-xs-12" id="where" type="text" name="" value="" placeholder="Ingrese su destino">
+            <button type="button" id="ruta-btn" class="offset-xs-1 offset-sm-1 offset-md-1 " name="button">TRAZAR RUTA</button>
+            <div id="line" class="offset-xs-1 offset-sm-1 offset-md-1"></div>
+             <button type="button" class="offset-xs-1 offset-sm-1 offset-md-1" id="find-btn" name="button">ENCUENTRAME</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="map" class="col-xs-6 col-sm-6 col-md-12"></div>
+    </div>
+  </div>
+
+
+
+  <script>
+     function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position:uluru,
+          map: map
+        });
+      
+      }
+  </script>
+
+ <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvIiNoWQlS4nC4fcpDsrnHjLaqABi8-jo&callback=initMap&libraries=places">
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
